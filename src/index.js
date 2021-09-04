@@ -16,8 +16,9 @@ class App extends React.Component {
             err => this.setState({ errorMessage: err.message })
         );
     }
-    
-    render() {
+
+    //created renderContent 'helper method' to render the red border(line 35) to be shown regardless of the condition. This is instead of creating a className on each condition separately. Just an example, does not show red border
+    renderContent() {
         if (this.state.errorMessage && !this.state.lat) {
             return <div>Error: {this.state.errorMessage} </div>
         }
@@ -27,6 +28,14 @@ class App extends React.Component {
         }
 
         return <Spinner message="Please accept location request" />;
+    }
+    
+    render() {
+        return (
+            <div className="border red">
+                {this.renderContent()}
+            </div>
+        );
     };
 }
 
