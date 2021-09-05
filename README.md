@@ -1,5 +1,7 @@
 # Season-Display-React-App
 
+This app displays text and icons based on the current season(summer/winter) at the user's location.
+
 ![summer](summer-react.png)
 ![winter](winter-react.png)
 
